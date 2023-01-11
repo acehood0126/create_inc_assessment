@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Docker: Attach to API Process",
+      "port": 9229,
+      "request": "attach",
+      "type": "node",
+      "restart": true,
+      "remoteRoot": "/app"
+    },
+    {
+      "name": "Docker: Attach to JOB QUEUE WORKER Process",
+      "port": 9230,
+      "request": "attach",
+      "type": "node",
+      "restart": true,
+      "remoteRoot": "/app"
+    }
+  ]
+}

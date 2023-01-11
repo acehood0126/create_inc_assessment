@@ -1,0 +1,12 @@
+repoOwner: Create-Inc-Candidates
+learnMoreLink: https://create.xyz
+config:
+  version: 1.0.0
+projectName: Coding Assessment acehood0126
+abbreviatedProjectName: codingAssessmentAcehood0126
+repoName: coding-assessment-acehood0126
+environments: []
+stack:
+  - features: []
+    kind: CodingAssessment
+    path: .

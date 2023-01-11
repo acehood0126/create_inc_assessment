@@ -1,0 +1,27 @@
+{
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "build/**", "lib/**", ".next/**"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "test:ci": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"]
+    },
+    "test:unit": {
+      "outputs": ["coverage/**"]
+    },
+    "test:functional": {
+      "dependsOn": ["build"],
+      "env": ["RUNNER_OS"],
+      "outputs": ["functional-coverage/**", "subprocess-coverage/**"]
+    },
+    "test:watch": {
+      "cache": false,
+      "dependsOn": ["build"]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "coding-assessment-acehood0126",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "git:precommit": "npx lint-staged",
+    "prepare": "husky install",
+    "start": "next start",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "cross-env NODE_ENV=development eslint --fix --cache"
+    ],
+    "{*.json,.{babelrc,eslintrc,prettierrc}}": [
+      "prettier --ignore-path .eslintignore --parser json --write"
+    ],
+    "*.{css,scss}": [
+      "prettier --ignore-path .eslintignore --single-quote --write"
+    ],
+    "*.{html,md,yml}": [
+      "prettier --ignore-path .eslintignore --single-quote --write"
+    ]
+  },
+  "dependencies": {
+    "next": "^12.2.5",
+    "postcss-import": "^14.0.2",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "sass": "^1.43.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.9.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "autoprefixer": "^10.3.7",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "11.1.2",
+    "husky": "^7.0.2",
+    "jest": "^27.3.1",
+    "lint-staged": "^10.2.11",
+    "postcss": "^8.4.12",
+    "prettier": "^2.3.2",
+    "tailwindcss": "^3.0.24",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.3.2"
+  },
+  "productName": "Coding Assessment acehood0126"
+}
