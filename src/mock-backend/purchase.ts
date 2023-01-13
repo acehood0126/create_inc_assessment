@@ -1,10 +1,5 @@
-import { Item } from './data';
+import { Item, UserAndItemState } from './data';
 import { sleep } from './utils';
-
-type UserAndItemState = {
-  balance: number;
-  items: Item[];
-};
 
 /**
  * Modifies `state`, given an `itemId` to purchase
@@ -13,11 +8,24 @@ type UserAndItemState = {
 export const executePurchase = async (
   itemId: Item['id'],
   state: UserAndItemState
-): Promise<UserAndItemState> => {
+): Promise<{ state: UserAndItemState; isSucceed: boolean; msg: string }> => {
   // NOTE: the following line intentionally pauses execution in this
   // function and MUST remain in tact for the assignment to replicate a
   // network request.
   await sleep(1000);
+  const { balance, items } = JSON.parse(JSON.stringify(state));
+  if (balance < items[itemId].price) {
+    return { state, isSucceed: false, msg: 'Not enough balance' };
+  }
+  if (items[itemId].inventory === 0) {
+    return { state, isSucceed: false, msg: 'Not enough inventory' };
+  }
+  items[itemId].inventory--;
+  return {
+    state: { items, balance: balance - items[itemId].price },
+    isSucceed: true,
+    msg: 'Success',
+  };
 
   // @TODO: Not implemented
 };

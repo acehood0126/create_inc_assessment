@@ -26,7 +26,7 @@
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["warn"],
     "semi": ["error", "always"],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": ["error", "windows"],
     "@typescript-eslint/naming-convention": [
       "warn",
       {
