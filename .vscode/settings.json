@@ -6,5 +6,5 @@
   },
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
-  "cSpell.words": ["acehood", "precommit", "tailwindcss"]
+  "cSpell.words": ["acehood", "Aurore", "precommit", "reduxjs", "tailwindcss"]
 }

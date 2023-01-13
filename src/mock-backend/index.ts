@@ -1,4 +1,4 @@
-import { initialBalance, initialItems, Item } from './data';
+import { initialItems, Item } from './data';
 
 type UseCheckout = {
   items: Item[];
