@@ -4,26 +4,27 @@ import { useDispatch } from 'react-redux';
 
 import { removeCart } from '../../services/slices/productSlice';
 
+import SampleProductImg from '../../assets/images/sample.jpg';
 import TrashImg from '../../assets/images/trash.png';
 
 interface ICartItem {
   index: number;
   name: string;
   price: number;
-  img: string;
+  inventory: number;
 }
 
 const CartItem: React.FC<ICartItem> = ({
   index,
   name,
   price,
-  img,
+  inventory,
 }: ICartItem) => {
   const dispatch = useDispatch();
   return (
     <div className="w-full h-[100px] p-2 bg-none border-2 flex flex-row justify-between items-center rounded-lg gap-3 bg-white">
       <img
-        src={`/imgs/products/${img}`}
+        src={SampleProductImg.src}
         alt=""
         className="w-[80px] h-[80px] object-cover rounded-lg"
       />
@@ -44,7 +45,7 @@ const CartItem: React.FC<ICartItem> = ({
         className="p-2"
         color="blue"
       >
-        <img src={TrashImg} alt="" />
+        <img src={TrashImg.src} alt="" />
       </Button>
     </div>
   );

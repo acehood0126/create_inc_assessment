@@ -16,6 +16,7 @@ interface IProductItem {
   index: number;
   name: string;
   price: number;
+  inventory: number;
   addedCart: boolean;
 }
 
@@ -23,6 +24,7 @@ const ProductItem: React.FC<IProductItem> = ({
   index,
   name,
   price,
+  inventory,
   addedCart,
 }: IProductItem) => {
   const dispatch = useDispatch();
@@ -40,7 +42,9 @@ const ProductItem: React.FC<IProductItem> = ({
           {name}
         </Typography>
         <div className="flex sm:flex-row flex-col justify-between gap-2 items-center w-full sm:mt-4 mt-2">
-          <Typography variant="h5">${price}</Typography>
+          <Typography variant="h5">
+            ${price} * {inventory}
+          </Typography>
           <Button
             disabled={addedCart}
             color="red"
