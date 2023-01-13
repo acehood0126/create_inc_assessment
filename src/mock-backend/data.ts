@@ -20,6 +20,11 @@ export type Item = {
   inventory: number;
 };
 
+export type UserAndItemState = {
+  balance: number;
+  items: Item[];
+};
+
 export const initialBalance = 20;
 
 export const initialItems: Item[] = [
